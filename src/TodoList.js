@@ -51,7 +51,7 @@ const TodoList = () => {
 };
 
 export default TodoList;
- {/** and since the html being returned is from the variable (loop through), then the variable == html, is always in sync
+ /** and since the html being returned is from the variable (loop through), then the variable == html, is always in sync
          * add clear all button 
          * oso debug delete button done
-          */}
+          */
