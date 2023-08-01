@@ -11,10 +11,17 @@ const TodoList = () => {
   const handleAddTodo = () => {
     if (inputValue.trim() !== '') {
       setTodos([...todos, inputValue]);
-      setInputValue('');
+      setInputValue(''); //clear the textbox
     }
   };
 
+  const handleAddEnter = (event) => {
+    if (inputValue.trim() !== '' && event.key === 'Enter') {
+      setTodos([...todos, inputValue]);
+      setInputValue('');
+    }
+
+  }
 
   const handleDeleteTodo = (index) => {
     const newTodos = [...todos];
@@ -35,6 +42,7 @@ const TodoList = () => {
         type="text"
         value={inputValue}
         onChange={handleInputChange}
+        onKeyDown={handleAddEnter}
       />
       <button onClick={handleAddTodo}>Add</button>
       <button onClick={handleClearAll}>Clear All</button>
