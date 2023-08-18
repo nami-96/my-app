@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /*font-size: calc(10px + 2vmin);*/
   color: white;
 }
 
@@ -35,4 +35,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.custom {
+  margin: 10px;
+}
+#add-btn {
+  margin: 10px;
+}
+
+#clear-btn {
+  white-space: nowrap;
+}
+
+#del-btn {
+  margin: 10px;
+
+}
+.listName {
+  margin: 10px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.list {
+  margin: 10px;
 }

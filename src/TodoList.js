@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -37,20 +39,23 @@ const TodoList = () => {
   // then it will return html
 
   return (
-    <div>
-      <input
+    <div className='card custom'>
+      <div className='listName'>Nabil's List</div>
+      <div className='container'> 
+        <input className='form-control custom-input'
         type="text"
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleAddEnter}
-      />
-      <button onClick={handleAddTodo}>Add</button>
-      <button onClick={handleClearAll}>Clear All</button>
-      <ul>
+        />
+        <button className="btn btn-primary custom-button" id='add-btn' onClick={handleAddTodo}>Add</button>
+        <button className="btn btn-secondary custom-button" id='clear-btn' onClick={handleClearAll} >Clear All</button>
+      </div>
+      <ul className='listNo'>
         {todos.map((todo, index) => (
-          <li key={index}>
+          <li key={index} className='listItem'> 
             {todo}
-             <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+             <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index)}>Delete</button>
           </li>
         ))}
       </ul>
