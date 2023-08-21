@@ -1,13 +1,14 @@
 
 import './App.css';
 import TodoList from './TodoList';
+import GenList from './namelist';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoList></TodoList>
+        <GenList></GenList>
       </header>
     </div>
   );
