@@ -40,7 +40,6 @@ const TodoList = () => {
 
   return (
     <div className='card custom'>
-      <div className='listName'>Nabil's List</div>
       <div className='container'> 
         <input className='form-control custom-input'
         type="text"
