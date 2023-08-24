@@ -5,6 +5,7 @@ const GenList = () => {
     const [nameLists, setNameLists] = useState([])
     const [inputVal, setInputVal] = useState('')
     const [todos, setTodos] = useState([]);
+    const nameListSummary = [...todos];
 
     const handleInputVal = (e) => {
         setInputVal(e.target.value)
@@ -56,7 +57,7 @@ const GenList = () => {
             </div>
             <div className="card custom">
             <h2>Summary</h2>
-                {todos.map( (item,index) => (
+                {nameListSummary.map( (item,index) => (
                     <div key={index}>
                         <ul>
                             {item}
