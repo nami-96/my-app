@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import App from './App';
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+const TodoList = ({todos, setTodos}) => {
+  
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
@@ -34,6 +33,8 @@ const TodoList = () => {
   const handleClearAll = () => {
     setTodos([]);
   }
+
+  console.log(todos)
 
   // since we call the function
   // then it will return html

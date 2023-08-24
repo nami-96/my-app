@@ -1,6 +1,5 @@
 
 import './App.css';
-import TodoList from './TodoList';
 import GenList from './namelist';
 
 

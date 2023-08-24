@@ -4,6 +4,7 @@ import TodoList from "./TodoList";
 const GenList = () => {
     const [nameLists, setNameLists] = useState([])
     const [inputVal, setInputVal] = useState('')
+    const [todos, setTodos] = useState([]);
 
     const handleInputVal = (e) => {
         setInputVal(e.target.value)
@@ -42,7 +43,10 @@ const GenList = () => {
                     <div key={index}>
                         <h3 className="listName">{nameList.name} List</h3>
                         <ul>
-                            <TodoList></TodoList>
+                            <TodoList
+                                todos={todos}
+                                setTodos={setTodos}
+                            ></TodoList>
                         </ul>
                         <button className="btn btn-danger custom-button" id='del-btn custom'
                             onClick={handleDelList}
@@ -50,6 +54,16 @@ const GenList = () => {
                     </div>
                 ))}
             </div>
+            <div className="card custom">
+            <h2>Summary</h2>
+                {todos.map( (item,index) => (
+                    <div key={index}>
+                        <ul>
+                            {item}
+                        </ul>
+                    </div>
+                ))}
+                </div>
         </div>
     )
 }
