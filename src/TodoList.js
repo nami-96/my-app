@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos,setTodos}) => {
   
   const [inputValue, setInputValue] = useState('');
+  
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);

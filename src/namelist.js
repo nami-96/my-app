@@ -5,7 +5,6 @@ const GenList = () => {
     const [nameLists, setNameLists] = useState([])
     const [inputVal, setInputVal] = useState('')
     const [todos, setTodos] = useState([]);
-    const nameListSummary = [...todos];
 
     const handleInputVal = (e) => {
         setInputVal(e.target.value)
@@ -13,7 +12,7 @@ const GenList = () => {
 
     const handleAddNameList = () => {
         if(inputVal.trim() !== '') {
-            setNameLists([...nameLists, { name:inputVal, item: TodoList}])
+            setNameLists([...nameLists, {name:inputVal}])
             setInputVal('')
         }
     }
@@ -45,8 +44,8 @@ const GenList = () => {
                         <h3 className="listName">{nameList.name} List</h3>
                         <ul>
                             <TodoList
-                                todos={todos}
-                                setTodos={setTodos}
+                            todos={todos}
+                            setTodos={setTodos}    
                             ></TodoList>
                         </ul>
                         <button className="btn btn-danger custom-button" id='del-btn custom'
@@ -57,13 +56,6 @@ const GenList = () => {
             </div>
             <div className="card custom">
             <h2>Summary</h2>
-                {nameListSummary.map( (item,index) => (
-                    <div key={index}>
-                        <ul>
-                            {item}
-                        </ul>
-                    </div>
-                ))}
                 </div>
         </div>
     )
