@@ -14,7 +14,7 @@ const GenList = () => {
     const handleAddNameList = () => {
         if(inputVal.trim() !== '') {
             setList([...list, {name:inputVal, items:[]}])
-            setInputValues
+            setInputValues([...inputValues,''])
             setInputVal('')
         }
     }
