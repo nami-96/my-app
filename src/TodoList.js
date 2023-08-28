@@ -35,8 +35,6 @@ const TodoList = ({todos,setTodos}) => {
     setTodos([]);
   }
 
-  console.log(todos)
-
   // since we call the function
   // then it will return html
 
