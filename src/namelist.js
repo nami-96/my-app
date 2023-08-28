@@ -40,8 +40,9 @@ const GenList = () => {
         setList(newLists);
     
         const newInputValues = [...inputValues];
-        newInputValues[listIndex] = ''; // Clear the input value for this list
+         // Clear the input value for this list
         setInputValues(newInputValues);
+        newInputValues[listIndex] = '';
     };
   
     const handleAddEnter = (event, listIndex) => {
@@ -62,10 +63,6 @@ const GenList = () => {
       setList(newTodos);
     } ;
   
-    const handleClearAll = () => {
-       setList([...list, {items:''}]);
-    }
-    
     return (
         <div>
             <div className="input-group mb-3">
@@ -94,15 +91,16 @@ const GenList = () => {
                                 onKeyDown={(e) => handleAddEnter(e, listIndex)}
                                 />
                                 <button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button>
-                                <button className="btn btn-secondary custom-button" id='clear-btn' onClick={handleClearAll} >Clear All</button>
+                                
                             </div>
                             <ul className='listNo'>
-                                {listItem.items.map((todo, index) => (
-                                <li key={index} className='listItem'> 
-                                    {todo}
+                            {Array.isArray(listItem.items) &&
+                                listItem.items.map((todo, index) => (
+                                    <li key={index} className='listItem'> 
+                                        {todo}
                                     <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index)}>Delete</button>
-                                </li>
-                                ))}
+                                    </li>
+                                    ))}
                             </ul>
                             </div>
                         <button className="btn btn-danger custom-button" id='del-btn custom'
