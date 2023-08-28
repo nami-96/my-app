@@ -62,7 +62,8 @@ const GenList = () => {
       newTodos.splice(index, 1);
       setList(newTodos);
     } ;
-  
+    
+    const SumList = [...list]
     return (
         <div>
             <div className="input-group mb-3">
@@ -104,7 +105,7 @@ const GenList = () => {
                             </ul>
                             </div>
                         <button className="btn btn-danger custom-button" id='del-btn custom'
-                            onClick={handleDelList}
+                            onClick={() => handleDelList(listIndex)}
                         >Delete List</button>
                     </div>
                 ))}
@@ -112,6 +113,18 @@ const GenList = () => {
             </div>
             <div className="card custom">
             <h2>Summary</h2>
+                {SumList.map((item, listIndex) => (
+                    <div key={listIndex}>
+                    <ul className='listNo'>
+                    {item.items.map((todo, index) => (
+                    <li key={index}>
+                  {todo}
+                  <button className='btn btn-danger custom-button' id='del-btn'>Delete</button>
+               </li>
+            ))}
+         </ul>
+      </div>
+   ))}
                 </div>
         </div>
     )
