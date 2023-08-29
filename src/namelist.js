@@ -35,6 +35,8 @@ const GenList = () => {
     };
   
     const handleAddTodo = (listIndex) => {
+        if (inputValues[listIndex].trim() !== '') {
+          
         const newLists = [...list];
         newLists[listIndex].items.push(inputValues[listIndex]);
         setList(newLists);
@@ -43,6 +45,9 @@ const GenList = () => {
          // Clear the input value for this list
         setInputValues(newInputValues);
         newInputValues[listIndex] = '';
+        
+        }
+        
     };
   
     const handleAddEnter = (event, listIndex) => {
@@ -104,7 +109,7 @@ const GenList = () => {
                                     ))}
                             </ul>
                             </div>
-                        <button className="btn btn-danger custom-button" id='del-btn custom'
+                        <button className="btn btn-danger" 
                             onClick={() => handleDelList(listIndex)}
                         >Delete List</button>
                     </div>
@@ -119,7 +124,7 @@ const GenList = () => {
                     {item.items.map((todo, index) => (
                     <li key={index}>
                   {todo}
-                  <button className='btn btn-danger custom-button' id='del-btn'>Delete</button>
+                  <button className='btn btn-danger custom-button' id='summarydel-btn'>Delete</button>
                </li>
             ))}
          </ul>
