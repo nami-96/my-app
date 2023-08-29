@@ -25,7 +25,6 @@ const GenList = () => {
         setList(newLists)
     }
     
-    console.log(JSON.stringify(list))
     //List Item Function
 
     const handleInputChange = (e, listIndex) => {
@@ -45,7 +44,7 @@ const GenList = () => {
          // Clear the input value for this list
         setInputValues(newInputValues);
         newInputValues[listIndex] = '';
-        
+
         }
         
     };
@@ -62,13 +61,18 @@ const GenList = () => {
         }
     };
   
-    const handleDeleteTodo = (index) => {
+    const handleDeleteTodo = (index,listIndex) => {
       const newTodos = [...list];
-      newTodos.splice(index, 1);
+      newTodos[listIndex].items.splice(index, 1);
       setList(newTodos);
     } ;
-    
-    const SumList = [...list]
+
+    const handleDelSum = (index, listIndex) => {
+        const newSum = [...list];
+        newSum[listIndex].items.splice(index, 1);
+        setList(newSum)
+    }
+
     return (
         <div>
             <div className="input-group mb-3">
@@ -104,7 +108,7 @@ const GenList = () => {
                                 listItem.items.map((todo, index) => (
                                     <li key={index} className='listItem'> 
                                         {todo}
-                                    <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index)}>Delete</button>
+                                    <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index,listIndex)}>Delete</button>
                                     </li>
                                     ))}
                             </ul>
@@ -117,18 +121,18 @@ const GenList = () => {
 
             </div>
             <div className="card custom">
-            <h2>Summary</h2>
-                {SumList.map((item, listIndex) => (
-                    <div key={listIndex}>
+            <h3>Summary</h3>
+                {list.map((item, listIndex) => (
+                <div key={listIndex} >
                     <ul className='listNo'>
-                    {item.items.map((todo, index) => (
-                    <li key={index}>
-                  {todo}
-                  <button className='btn btn-danger custom-button' id='summarydel-btn'>Delete</button>
-               </li>
+                        {item.items.map((todo, index) => (
+                        <li key={index} className='listItemSummary'>
+                            {todo}
+                            <button className='btn btn-danger custom-button' id='sum-btn' onClick={() => handleDelSum(index, listIndex)}>Delete</button>
+                        </li>
             ))}
-         </ul>
-      </div>
+                        </ul>
+                </div>
    ))}
                 </div>
         </div>
