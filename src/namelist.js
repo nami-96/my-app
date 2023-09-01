@@ -3,9 +3,9 @@ import TodoList from "./TodoList";
 
 const GenList = () => {
 
-    const [list, setList] = useState([])
+    const [list, setList] = useState([]) // [{name: "kamarol"}, {name: "nabil"}]
     const [inputVal, setInputVal] = useState('')
-    const [inputValues, setInputValues] = useState('');
+    const [inputValues, setInputValues] = useState(''); // ["kamarol", ""]
 
     const handleInputVal = (e) => {
         setInputVal(e.target.value)
@@ -23,6 +23,10 @@ const GenList = () => {
         const newLists = [...list]
         newLists.splice(index,1)
         setList(newLists)
+        
+        const newInputValues = [...inputValues]
+        newInputValues.splice(index,1)
+        setInputValues(newInputValues)
     }
     
     //List Item Function
