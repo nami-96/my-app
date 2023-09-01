@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 import { MiniList } from "./MiniList";
+import { Summary } from "./summary";
 
 const GenList = () => {
 
@@ -111,16 +112,11 @@ const GenList = () => {
             <div className="card custom">
             <h3>Summary</h3>
                 {list.map((item, listIndex) => (
-                <div key={listIndex} >
-                    <ul className='listNo'>
-                        {item.items.map((todo, index) => (
-                        <li key={index} className='listItemSummary'>
-                            {todo}
-                            <button className='btn btn-danger custom-button' id='sum-btn' onClick={() => handleDeleteTodo(index, listIndex)}>Delete</button>
-                        </li>
-            ))}
-                        </ul>
-                </div>
+                    <Summary
+                        listIndex={listIndex}
+                        item={item}
+                        handleDeleteTodo={handleDeleteTodo}
+                    ></Summary>
    ))}
                 </div>
         </div>
