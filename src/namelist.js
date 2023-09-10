@@ -6,7 +6,6 @@ import { Summary } from "./summary";
 const GenList = () => {
 
     const [list, setList] = useState([]) // [{name: "kamarol"}, {name: "nabil"}]
-    const [inputVal, setInputVal] = useState('')
     const [inputValues, setInputValues] = useState(''); // ["kamarol", ""]
 
     const handleInputVal = (e) => {
@@ -15,7 +14,7 @@ const GenList = () => {
 
     const handleAddNameList = () => {
         if(inputVal.trim() !== '') {
-            setList([...list, {name:inputVal, items:[]}])
+            setList([...list, {name:inputVal, items:[], inputVal:''}])
             setInputValues([...inputValues,''])
             setInputVal('')
         }
