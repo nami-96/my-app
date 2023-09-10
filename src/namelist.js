@@ -99,12 +99,11 @@ const GenList = () => {
                     <MiniList
                     listIndex={listIndex}
                     listItem={listItem}
-                    inputValues={inputValues}
-                    handleInputChange={handleInputChange}
-                    handleAddEnter={handleAddEnter}
-                    handleAddTodo={handleAddTodo}
-                    handleDeleteTodo={handleDeleteTodo}
-                    handleDelList={handleDelList}
+                    // handleInputChange={handleInputChange}
+                    // handleAddEnter={handleAddEnter}
+                    // handleAddTodo={handleAddTodo}
+                    // handleDeleteTodo={handleDeleteTodo}
+                    // handleDelList={handleDelList}
                     ></MiniList>
                 ))}
 
