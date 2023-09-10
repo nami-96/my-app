@@ -6,71 +6,72 @@ import { Summary } from "./summary";
 const GenList = () => {
 
     const [list, setList] = useState([]) // [{name: "kamarol"}, {name: "nabil"}]
-    const [inputValues, setInputValues] = useState(''); // ["kamarol", ""]
+    const [inputVal, setInputVal] = useState(''); // ["kamarol", ""]
 
     const handleInputVal = (e) => {
         setInputVal(e.target.value)
-    }
+    } //accept the title of the list
 
     const handleAddNameList = () => {
         if(inputVal.trim() !== '') {
             setList([...list, {name:inputVal, items:[], inputVal:''}])
-            setInputValues([...inputValues,''])
             setInputVal('')
         }
-    }
+    }// add a new object/"list" inside the array of list
 
-    const handleDelList = (index) => {
-        const newLists = [...list]
-        newLists.splice(index,1)
-        setList(newLists)
+    console.log(list)
+
+    // const handleDelList = (index) => {
+    //     const newLists = [...list]
+    //     newLists.splice(index,1)
+    //     setList(newLists)
         
-        const newInputValues = [...inputValues]
-        newInputValues.splice(index,1)
-        setInputValues(newInputValues)
-    }
+    //     const newInputValues = [...inputValues]
+    //     newInputValues.splice(index,1)
+    //     setInputValues(newInputValues)
+    // }
     
     //List Item Function
 
-    const handleInputChange = (e, listIndex) => {
-        const newInputValues = [...inputValues];
-        newInputValues[listIndex] = e.target.value;
-        setInputValues(newInputValues);
-    };
+    // const handleInputChange = (e, listIndex) => {
+    //     const newInputValues = [...inputValues];
+    //     newInputValues[listIndex] = e.target.value;
+    //     setInputValues(newInputValues);
+    // };
   
-    const handleAddTodo = (listIndex) => {
-        if (inputValues[listIndex].trim() !== '') {
+    // const handleAddTodo = (listIndex) => {
+    //     if (inputValues[listIndex].trim() !== '') {
           
-        const newLists = [...list];
-        newLists[listIndex].items.push(inputValues[listIndex]);
-        setList(newLists);
+    //     const newLists = [...list];
+    //     newLists[listIndex].items.push(inputValues[listIndex]);
+    //     setList(newLists);
     
-        const newInputValues = [...inputValues];
-         // Clear the input value for this list
-        setInputValues(newInputValues);
-        newInputValues[listIndex] = '';
+    //     const newInputValues = [...inputValues];
+    //      // Clear the input value for this list
+    //     setInputValues(newInputValues);
+    //     newInputValues[listIndex] = '';
 
-        }
+    //     }
         
-    };
+    // };
   
-    const handleAddEnter = (event, listIndex) => {
-        if (inputValues[listIndex].trim() !== '' && event.key === 'Enter') {
-            const newLists = [...list];
-            newLists[listIndex].items.push(inputValues[listIndex]);
-            setList(newLists);
+    // const handleAddEnter = (event, listIndex) => {
+    //     if (inputValues[listIndex].trim() !== '' && event.key === 'Enter') {
+    //         const newLists = [...list];
+    //         newLists[listIndex].items.push(inputValues[listIndex]);
+    //         setList(newLists);
     
-            const newInputValues = [...inputValues];
-            newInputValues[listIndex] = ''; // Clear the input value for this list
-            setInputValues(newInputValues);
-        }
-    };
+    //         const newInputValues = [...inputValues];
+    //         newInputValues[listIndex] = ''; // Clear the input value for this list
+    //         setInputValues(newInputValues);
+    //     }
+    // };
   
-    const handleDeleteTodo = (index,listIndex) => {
-      const newTodos = [...list];
-      newTodos[listIndex].items.splice(index, 1);
-      setList(newTodos);
-    } ;
+    // const handleDeleteTodo = (index,listIndex) => {
+    //   const newTodos = [...list];
+    //   newTodos[listIndex].items.splice(index, 1);
+    //   setList(newTodos);
+    // } ;
 
     // const handleDelSum = (index, listIndex) => {
     //     const newSum = [...list];
@@ -108,7 +109,7 @@ const GenList = () => {
                 ))}
 
             </div>
-            <div className="card custom">
+            {/* <div className="card custom">
             <h3>Summary</h3>
                 {list.map((item, listIndex) => (
                     <Summary
@@ -117,7 +118,7 @@ const GenList = () => {
                         handleDeleteTodo={handleDeleteTodo}
                     ></Summary>
    ))}
-                </div>
+                </div> */}
         </div>
     )
 }
