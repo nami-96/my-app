@@ -1,4 +1,4 @@
-export const MiniList = ({listIndex,  listItem, inputValues, handleInputChange, handleAddEnter, handleAddTodo, handleDeleteTodo, handleDelList}) => {
+export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnter, handleAddTodo, handleDeleteTodo, handleDelList}) => {
     return (
         <div key={listIndex}>
         <h3 className="listName">{listItem.name} List</h3>
