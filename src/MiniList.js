@@ -10,7 +10,7 @@ export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnte
                     onChange={(e) => handleInputChange(e, listIndex)}
                     // onKeyDown={(e) => handleAddEnter(e, listIndex)}
                     />
-                    {/* <button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button> */}
+                    <button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button>
                     
                 </div>
                     <ul className='listNo'>

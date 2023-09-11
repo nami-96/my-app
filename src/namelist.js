@@ -39,19 +39,18 @@ const GenList = () => {
         setList(newInputValues);
     };
   
-    // const handleAddTodo = (listIndex) => {
-    //     if (list[listIndex].trim() !== '') {
+    const handleAddTodo = (listIndex) => {
+        if (list[listIndex].trim() !== '') {
           
-    //     const newLists = [...list];
-    //     newLists[listIndex].items.push(list[listIndex].items);
-    //     setList(newLists);
+        const newLists = [...list];
+        newLists[listIndex].items.push(list[listIndex].items);
+        setList(newLists);
     
-    //     const newInputValues = [...list];
-    //      // Clear the input value for this list
-    //     setList(newInputValues);
-    //     newInputValues[listIndex] = '';
+        const newInputValues = [...list];
+         // Clear the input value for this list
+        newInputValues[listIndex] = '';
 
-    //     }};
+        }};
   
     // const handleAddEnter = (event, listIndex) => {
     //     if (inputValues[listIndex].trim() !== '' && event.key === 'Enter') {
@@ -99,7 +98,7 @@ const GenList = () => {
                     listItem={listItem}
                     handleInputChange={handleInputChange}
                     // handleAddEnter={handleAddEnter}
-                    // handleAddTodo={handleAddTodo}
+                    handleAddTodo={handleAddTodo}
                     // handleDeleteTodo={handleDeleteTodo}
                     // handleDelList={handleDelList}
                     ></MiniList>
