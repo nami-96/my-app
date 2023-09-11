@@ -33,27 +33,25 @@ const GenList = () => {
     
     //List Item Function
 
-    // const handleInputChange = (e, listIndex) => {
-    //     const newInputValues = [...inputValues];
-    //     newInputValues[listIndex] = e.target.value;
-    //     setInputValues(newInputValues);
-    // };
+    const handleInputChange = (e, listIndex) => {
+        const newInputValues = [...list];
+        newInputValues[listIndex].items = e.target.value;
+        setList(newInputValues);
+    };
   
     // const handleAddTodo = (listIndex) => {
-    //     if (inputValues[listIndex].trim() !== '') {
+    //     if (list[listIndex].trim() !== '') {
           
     //     const newLists = [...list];
-    //     newLists[listIndex].items.push(inputValues[listIndex]);
+    //     newLists[listIndex].items.push(list[listIndex].items);
     //     setList(newLists);
     
-    //     const newInputValues = [...inputValues];
+    //     const newInputValues = [...list];
     //      // Clear the input value for this list
-    //     setInputValues(newInputValues);
+    //     setList(newInputValues);
     //     newInputValues[listIndex] = '';
 
-    //     }
-        
-    // };
+    //     }};
   
     // const handleAddEnter = (event, listIndex) => {
     //     if (inputValues[listIndex].trim() !== '' && event.key === 'Enter') {
@@ -99,7 +97,7 @@ const GenList = () => {
                     <MiniList
                     listIndex={listIndex}
                     listItem={listItem}
-                    // handleInputChange={handleInputChange}
+                    handleInputChange={handleInputChange}
                     // handleAddEnter={handleAddEnter}
                     // handleAddTodo={handleAddTodo}
                     // handleDeleteTodo={handleDeleteTodo}

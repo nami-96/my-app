@@ -7,10 +7,10 @@ export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnte
                     <input className='form-control custom-input'
                     type="text"
                     value={listItem.inputVal}
-                    // onChange={(e) => handleInputChange(e, listIndex)}
+                    onChange={(e) => handleInputChange(e, listIndex)}
                     // onKeyDown={(e) => handleAddEnter(e, listIndex)}
                     />
-                    {/* //<button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button> */}
+                    {/* <button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button> */}
                     
                 </div>
                     <ul className='listNo'>
