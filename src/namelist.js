@@ -42,12 +42,10 @@ const GenList = () => {
         if (list[listIndex].inputVal.trim() !== '') {
           
         const newLists = [...list];
-        newLists[listIndex].items.push(list[listIndex].items);
+        newLists[listIndex].items.push(list[listIndex].inputVal);
         setList(newLists);
-    
-        
          // Clear the input value for this list
-
+         
         }};
   
     // const handleAddEnter = (event, listIndex) => {

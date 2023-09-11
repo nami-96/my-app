@@ -18,7 +18,7 @@ export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnte
                         listItem.items.map((todo, index) => (
                             <li key={index} className='listItem'> 
                                 {todo}
-                            <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index,listIndex)}>Delete</button>
+                            {/* <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index,listIndex)}>Delete</button> */}
                             </li>
                             ))}
                     </ul>
