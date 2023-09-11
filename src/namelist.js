@@ -19,7 +19,6 @@ const GenList = () => {
         }
     }// add a new object/"list" inside the array of list
 
-    console.log(list)
 
     // const handleDelList = (index) => {
     //     const newLists = [...list]
@@ -35,7 +34,7 @@ const GenList = () => {
 
     const handleInputChange = (e, listIndex) => {
         const newInputValues = [...list];
-        newInputValues[listIndex].items = e.target.value;
+        newInputValues[listIndex].inputVal = e.target.value;
         setList(newInputValues);
     };
   
