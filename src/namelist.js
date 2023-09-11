@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TodoList from "./TodoList";
 import { MiniList } from "./MiniList";
 import { Summary } from "./summary";
 
@@ -20,15 +19,11 @@ const GenList = () => {
     }// add a new object/"list" inside the array of list
 
 
-    // const handleDelList = (index) => {
-    //     const newLists = [...list]
-    //     newLists.splice(index,1)
-    //     setList(newLists)
-        
-    //     const newInputValues = [...inputValues]
-    //     newInputValues.splice(index,1)
-    //     setInputValues(newInputValues)
-    // }
+    const handleDelList = (index) => {
+        const newLists = [...list]
+        newLists.splice(index,1)
+        setList(newLists)
+    }
     
     //List Item Function
 
@@ -43,28 +38,25 @@ const GenList = () => {
           
         const newLists = [...list];
         newLists[listIndex].items.push(list[listIndex].inputVal);
+        newLists[listIndex].inputVal = ''; // Clear the input value for this list
         setList(newLists);
-         // Clear the input value for this list
-         
+    
         }};
   
-    // const handleAddEnter = (event, listIndex) => {
-    //     if (inputValues[listIndex].trim() !== '' && event.key === 'Enter') {
-    //         const newLists = [...list];
-    //         newLists[listIndex].items.push(inputValues[listIndex]);
-    //         setList(newLists);
-    
-    //         const newInputValues = [...inputValues];
-    //         newInputValues[listIndex] = ''; // Clear the input value for this list
-    //         setInputValues(newInputValues);
-    //     }
-    // };
+    const handleAddEnter = (event, listIndex) => {
+        if (list[listIndex].inputVal.trim() !== '' && event.key === 'Enter') {
+            const newLists = [...list];
+            newLists[listIndex].items.push(list[listIndex].inputVal);
+            newLists[listIndex].inputVal = '';
+            setList(newLists);
+        }
+    };
   
-    // const handleDeleteTodo = (index,listIndex) => {
-    //   const newTodos = [...list];
-    //   newTodos[listIndex].items.splice(index, 1);
-    //   setList(newTodos);
-    // } ;
+    const handleDeleteTodo = (index,listIndex) => {
+      const newTodos = [...list];
+      newTodos[listIndex].items.splice(index, 1);
+      setList(newTodos);
+    } ;
 
     // const handleDelSum = (index, listIndex) => {
     //     const newSum = [...list];
@@ -93,24 +85,22 @@ const GenList = () => {
                     listIndex={listIndex}
                     listItem={listItem}
                     handleInputChange={handleInputChange}
-                    // handleAddEnter={handleAddEnter}
+                    handleAddEnter={handleAddEnter}
                     handleAddTodo={handleAddTodo}
-                    // handleDeleteTodo={handleDeleteTodo}
-                    // handleDelList={handleDelList}
+                    handleDeleteTodo={handleDeleteTodo}
+                    handleDelList={handleDelList}
                     ></MiniList>
                 ))}
 
             </div>
-            {/* <div className="card custom">
+            <div className="card custom">
             <h3>Summary</h3>
                 {list.map((item, listIndex) => (
-                    <Summary
-                        listIndex={listIndex}
-                        item={item}
-                        handleDeleteTodo={handleDeleteTodo}
-                    ></Summary>
+                    <ul key={listIndex}>
+                        {item.name} List's {item.items.length}
+                    </ul>
    ))}
-                </div> */}
+            </div>
         </div>
     )
 }

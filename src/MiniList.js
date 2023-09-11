@@ -8,7 +8,7 @@ export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnte
                     type="text"
                     value={listItem.inputVal}
                     onChange={(e) => handleInputChange(e, listIndex)}
-                    // onKeyDown={(e) => handleAddEnter(e, listIndex)}
+                    onKeyDown={(e) => handleAddEnter(e, listIndex)}
                     />
                     <button className="btn btn-primary custom-button" id='add-btn' onClick={() => handleAddTodo(listIndex)}>Add</button>
                     
@@ -18,14 +18,14 @@ export const MiniList = ({listIndex,  listItem, handleInputChange, handleAddEnte
                         listItem.items.map((todo, index) => (
                             <li key={index} className='listItem'> 
                                 {todo}
-                            {/* <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index,listIndex)}>Delete</button> */}
+                            <button className='btn btn-danger custom-button' id='del-btn' onClick={() => handleDeleteTodo(index,listIndex)}>Delete</button>
                             </li>
                             ))}
                     </ul>
             </div>
-        {/* <button className="btn btn-danger" 
+        <button className="btn btn-danger" 
             onClick={() => handleDelList(listIndex)}
-        >Delete List</button> */}
+        >Delete List</button>
     </div>
     )
 }
