@@ -39,15 +39,14 @@ const GenList = () => {
     };
   
     const handleAddTodo = (listIndex) => {
-        if (list[listIndex].trim() !== '') {
+        if (list[listIndex].inputVal.trim() !== '') {
           
         const newLists = [...list];
         newLists[listIndex].items.push(list[listIndex].items);
         setList(newLists);
     
-        const newInputValues = [...list];
+        
          // Clear the input value for this list
-        newInputValues[listIndex] = '';
 
         }};
   
