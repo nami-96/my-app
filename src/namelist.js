@@ -98,6 +98,7 @@ const GenList = () => {
                 {list.map((item, listIndex) => (
                     <ul key={listIndex}>
                         {item.name} List's {item.items.length}
+                        <button className='btn btn-danger custom-button' id='sum-btn' onClick={() => handleDeleteTodo(listIndex)}>Delete</button>
                     </ul>
    ))}
             </div>
